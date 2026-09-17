@@ -1,0 +1,21 @@
+<!-- This includes the header and footer from partials folder -->
+<%- include("../partials/header") %>
+<div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-4">
+    <h1 clas="mb-0">Categories</h1>
+    <a href="/categories/new" class="btn btn-primary">Add a category</a>
+    <div class="list-group">
+        <% if (categories.length === 0) { %>
+            <div class="alert alert-info">No categories yet.</div>
+        <% } else { %>
+            <ul>
+                <% categories.forEach(function(category) { %>
+                    <li>
+                        <a href="/categories/<%= category.id %>"><%= category.name %></a>
+                        - <%= category.description %>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } %>
+    </div>
+</div>
+<%- include("../partials/footer") %>

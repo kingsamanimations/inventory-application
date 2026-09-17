@@ -1,0 +1,37 @@
+{
+  "name": "inventory-application",
+  "version": "1.0.0",
+  "description": "This is an inventory website for art, from The Odin Project (TOP)",
+  "homepage": "https://github.com/kingsamanimations/inventory-application",
+  "bugs": {
+    "url": "https://github.com/kingsamanimations/inventory-application"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kingsamanimations/inventory-application.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node --test",
+    "dev": "nodemon app.js",
+    "seed": "node db/populateddb.js",
+    "engines": { "node": ">=18" }
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "eslint": "^10.10.0",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "node": "^26.8.2",
+    "pg": "^8.23.0",
+    "webpack": "^5.107.2"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

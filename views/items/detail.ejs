@@ -1,0 +1,22 @@
+<!-- This includes the header and footer from partials folder -->
+<%- include("../partials/header") %>
+
+<h1>Inventory Application</h1>
+<p><%= item.description || "No description" %></p>
+<p>Browse the inventory by category or view any time!</p>
+<ul>
+    <li>Price: $<%= item.price %></li>
+    <li>Category: <a href="/categories/<%= item.category_id %>"><%= item.category_name %></a></li>
+</ul>
+<a href="/items/<%= item.id %>/edit">Edit item</a>
+<form action="/items/<%= item.id %>/delete" method="post">
+    <label>
+        Admin password:
+        <input type="password" name="admin_password" required>
+    </label>
+    <button type="submit">Delete this item</button>
+</form>
+
+<a href="/items">Back to all items</a>
+
+<%- include("../partials/footer") %>

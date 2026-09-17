@@ -1,0 +1,39 @@
+<!-- This includes the header and footer from partials folder -->
+<%- include("../partials/header") %>
+
+<h1><%= title %></h1>
+
+<% if (errors.length > 0) { %> 
+    <ul style="color: red;">
+        <% errors.forEach((error) => { %>
+            <li><%= error.msg %></li>
+        <% }); %>
+    </ul>
+<% } %>
+
+<!-- Actual form-->
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">
+            Name:
+            <input type="text" name="name" value="<%= category.name || '' %>" required>
+        </label>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Description:
+            <textarea name="description"><%= category.description || '' %></textarea>
+        </label>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">
+            Admin password:
+            <input type="password" name="admin_password" required>
+        </label>
+    </div>
+    <button type="submit">Delete this category</button>
+
+    <button type="submit">Save</button>
+</form>
+
+<%- include("../partials/footer") %>
